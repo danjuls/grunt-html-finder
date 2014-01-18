@@ -1,0 +1,40 @@
+{
+  "name": "grunt-html-finder",
+  "version": "0.0.1",
+  "description": "The best Grunt plugin ever.",
+  "homepage": "https://github.com/danjuls/grunt-html-finder",
+  "repository": "https://github.com/danjuls/grunt-html-finder",
+  "bugs": "https://github.com/danjuls/grunt-html-finder/issues",
+  "author": {
+    "name": "Daniel Andréasson",
+    "email": "daniel@danjuls.se",
+    "url": "http://danjuls.se"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danjuls/grunt-html-finder"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt": "~0.4.0rc2",
+    "load-grunt-tasks": "~0.2.0",
+    "jshint-stylish": "~0.1.3"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
