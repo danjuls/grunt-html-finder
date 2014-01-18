@@ -1,6 +1,6 @@
 # grunt-html-finder
 
-> The best Grunt plugin ever.
+> This grunt plugin is not yet ready for production use.
 
 ## Getting Started
 This plugin requires Grunt.
