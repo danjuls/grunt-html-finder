@@ -13,27 +13,13 @@
 
   function writeToUser(files) {
     // var $div = $('</div>').attr('id', 'developer-menu').appendTo('body');
-    $(document.body).append('<div id="developer-menu"></div>');
+    $(document.body).append('<div id="developer-menu"><div class="dev-wrapper"><a href="#" class="show-hide">Show</a></div></div>');
     
-    $('#developer-menu').css({
-      'font-size' : '10px',
-      position: 'fixed',
-      left: '.5rem',
-      top: '4rem',
-      'z-index': '9999',
-    });
 
     $.each(files,function(index, value){
-     $('#developer-menu').append('<a href="'+value+'">'+value+'</a><br />');
+     $('#developer-menu .dev-wrapper').append('<a href="'+value+'">'+value+'</a><br />');
       
     });
   }
-
-  $('#developer-menu .expand').on('click', function(e) {
-    e.prevetDefault();
-  });
-    
   
-
-
 })(jQuery);
