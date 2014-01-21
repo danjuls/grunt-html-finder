@@ -33,40 +33,31 @@ module.exports = function (grunt) {
     var regex = '\/(.*)';
         
     if (options.reset) {
-        grunt.file.write(options.filename, '{}');
+      grunt.file.write(options.filename, '{}');
     }
-        
 
     // Iterate over all specified file groups.
-    // this.files.forEach(function (file) {
-      
-      // Warn on and remove invalid source files (if nonull was set).
-      // if (!grunt.file.exists(file)) {
-      //   grunt.log.warn('Source file "' + file + '" not found.');
-      //   return false;
-      // } else {
-      //   return true;
-      // }
-      // var src = file(function (src) {
-      //   // Warn on and remove invalid source files (if nonull was set).
-      //   if (!grunt.file.exists(src)) {
-      //     grunt.log.warn('Source file "' + src + '" not found.');
-      //     return false;
-      //   } else {
-      //     return true;
-      //   }
-      // });
-      
-      files.forEach(function(item) { 
-        result = item.match(regex);
+    files.forEach(function(file) { 
+      if (!grunt.file.exists(file)) {
+        grunt.log.warn('Source file "' + file + '" not found.');
+        return false;
+      } else {
+        result = file.match(regex);
         clean.push(result[1]);
-      });
-
-      // Write the destination file.
-      grunt.file.write(options.filename, JSON.stringify(clean, null, 4));
-      // Print a success message.
-      grunt.log.writeln('File "' + options.filename + '" created.');
-    // });
+        return true;
+      }
+    });
+    
+      
+    // Write the destination file.
+    grunt.file.write(options.dest + options.filename, JSON.stringify(clean, null, 4));
+    if (!grunt.file.exists(options.dest + options.filename)) {
+        grunt.log.warn('Write to "' + options.dest + '" failed');
+        return false;
+      }
+    // Print a success message.
+    grunt.log.writeln('File "' + options.filename + '" created.');
+    
   });
 
 };
