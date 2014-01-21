@@ -34,6 +34,7 @@ grunt.initConfig({
   },
 })
 ```
+You will also have to copy the html.finder.js file located at /frontend in module dir and include it so the frontend can fetch the files. 
 
 ### Options
 
@@ -51,13 +52,15 @@ A string value that is used to do something else with whatever else.
 
 ### Usage Examples
 
-#### Default Options
+#### Options
 In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
 ```js
 grunt.initConfig({
   html_finder: {
-    options: {},
+    options: {
+      
+    },
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
     },
@@ -81,6 +84,9 @@ grunt.initConfig({
   },
 })
 ```
+
+## Styling
+To see the magic on the frontend its good to include some css/scss/sass located at projectdir/frontend/
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
